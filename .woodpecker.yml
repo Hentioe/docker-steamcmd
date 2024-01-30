@@ -1,0 +1,15 @@
+steps:
+  palworld-server-build-push:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      registry: reg.hentioe.dev
+      repo: reg.hentioe.dev/steamcmd/palworld-server
+      username: admin
+      password:
+        from_secret: reg_admin_password
+      build_args: ENTRYPOINT=entrypoints/palworld-server.sh
+      platforms: linux/amd64
+      tags: latest
+    when:
+      branch: master
+      event: push
