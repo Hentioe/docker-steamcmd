@@ -2,7 +2,7 @@ version: "3"
 
 services:
   palworld-server:
-    image: reg.hentioe.dev/steamcmd/steamcmd:palworld-server
+    image: hentioe/steamcmd:palworld-server
     ports:
       - "8211:8211/udp"
     volumes:
