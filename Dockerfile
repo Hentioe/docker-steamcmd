@@ -64,6 +64,4 @@ RUN set -xe \
     && ln -s $HOME/.steam/sdk32/steamclient.so $HOME/.steam/sdk32/steamservice.so \
     && ln -s $HOME/.steam/sdk64/steamclient.so $HOME/.steam/sdk64/steamservice.so
 
-EXPOSE 8211
-
 ENTRYPOINT [ "entrypoint.sh" ]
