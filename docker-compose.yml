@@ -5,6 +5,8 @@ services:
     image: hentioe/steamcmd:palworld-server
     ports:
       - "8211:8211/udp"
+    command:
+      - "EpicApp=PalServer"
     volumes:
       - ./steamapps:/home/steamcmd/steamapps
     restart: always
