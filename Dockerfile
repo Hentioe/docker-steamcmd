@@ -27,7 +27,7 @@ RUN set -xe \
     && echo steam steam/question select "I AGREE" | sudo debconf-set-selections \
     && echo steam steam/license note '' | sudo debconf-set-selections
 
-# Update the repository and install SteamCMD
+# Update the repository and install SteamCMD and deps
 ARG DEBIAN_FRONTEND=noninteractive
 RUN set -xe \
     && sudo dpkg --add-architecture i386 \
@@ -37,6 +37,7 @@ RUN set -xe \
     locales \
     steamcmd \
     xdg-user-dirs \
+    tzdata \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # Add unicode support
