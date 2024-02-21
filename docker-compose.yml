@@ -4,9 +4,14 @@ services:
   palworld-server:
     image: hentioe/steamcmd:palworld-server
     ports:
-      - "8211:8211/udp"
+      - "8211:8211/udp" # Game port
+      - 25575:25575 # RCON port
+      - 27015:27015 # Steam query port
     command:
-      - "EpicApp=PalServer"
+      - EpicApp=PalServer
+      - -useperfthreads
+      - -NoAsyncLoadingThread
+      - -UseMultithreadForDS
     volumes:
       - ./steamapps:/home/steamcmd/steamapps
     restart: always
